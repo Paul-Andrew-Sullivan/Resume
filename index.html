@@ -121,6 +121,15 @@
 			}
 			.project-title-row h3 { margin: 0; }
 
+			/* Fix: bypass is-preload animation dependency on banner — ensures text is always visible */
+			#banner .inner {
+				opacity: 1 !important;
+				-moz-animation: none !important;
+				-webkit-animation: none !important;
+				-ms-animation: none !important;
+				animation: none !important;
+			}
+
 			@media print {
 				#header, #banner, #navButton, #navPanel, #cta, footer { display: none !important; }
 			}
