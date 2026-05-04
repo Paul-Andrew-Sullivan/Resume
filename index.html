@@ -1,0 +1,541 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Paul Andrew Sullivan</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css?v=2" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			/* ── Headshot ── */
+			.headshot-wrap {
+				text-align: center;
+				margin-bottom: 1.5rem;
+			}
+			.headshot-wrap img {
+				width: 200px;
+				height: 200px;
+				object-fit: cover;
+				border-radius: 50%;
+				border: 4px solid rgba(255,255,255,0.15);
+				box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+			}
+
+			/* ── In-Progress badge ── */
+			.badge-progress {
+				display: inline-flex;
+				align-items: center;
+				gap: .4rem;
+				padding: .25rem .7rem;
+				border-radius: 100px;
+				background: #fefce8;
+				border: 1px solid #fde68a;
+				color: #92400e;
+				font-size: .7rem;
+				font-weight: 700;
+				letter-spacing: .03em;
+				vertical-align: middle;
+				margin-left: .6rem;
+			}
+			.badge-dot {
+				width: 7px;
+				height: 7px;
+				border-radius: 50%;
+				background: #f59e0b;
+				animation: pulse-dot 2s ease-in-out infinite;
+				flex-shrink: 0;
+			}
+			@keyframes pulse-dot {
+				0%, 100% { opacity: 1; transform: scale(1); }
+				50%       { opacity: .5; transform: scale(.75); }
+			}
+
+			/* ── Skill tags ── */
+			.skill-tags {
+				display: flex;
+				flex-wrap: wrap;
+				gap: .4rem;
+			}
+			.skill-tag {
+				display: inline-block;
+				padding: .3rem .9rem;
+				border-radius: 100px;
+				background: rgba(255,255,255,0.12);
+				border: 1px solid rgba(255,255,255,0.35);
+				font-size: .78rem;
+				font-weight: 700;
+				letter-spacing: .04em;
+				box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+				backdrop-filter: blur(4px);
+			}
+			/* style1 sections have a light background */
+			.wrapper.style1 .skill-tag {
+				background: rgba(0,0,0,0.07);
+				border: 1px solid rgba(0,0,0,0.18);
+				color: inherit;
+				box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+			}
+
+			/* ── Experience entries ── */
+			.exp-entry {
+				background: rgba(255,255,255,0.08);
+				border: 1px solid rgba(255,255,255,0.15);
+				border-left: 4px solid rgba(255,255,255,0.6);
+				border-radius: 6px;
+				padding: 1.4rem 1.6rem;
+				margin-bottom: 1.25rem;
+			}
+			.exp-entry:last-child { margin-bottom: 0; }
+			.exp-meta {
+				font-size: .82rem;
+				font-weight: 700;
+				letter-spacing: .05em;
+				text-transform: uppercase;
+				opacity: .75;
+				margin-bottom: .45rem;
+			}
+			.exp-entry h3 {
+				margin: 0 0 .65rem;
+				font-size: 1.25rem;
+				opacity: 1;
+			}
+			.exp-entry p {
+				margin: 0;
+				font-size: 1rem;
+				line-height: 1.8;
+				opacity: 1;
+			}
+			.exp-entry p {
+				margin: 0;
+				font-size: .9rem;
+				opacity: .85;
+			}
+
+			/* ── Project title with badge inline ── */
+			.project-title-row {
+				display: flex;
+				align-items: center;
+				flex-wrap: wrap;
+				gap: .3rem;
+				margin-bottom: .5rem;
+			}
+			.project-title-row h3 { margin: 0; }
+
+			@media print {
+				#header, #banner, #navButton, #navPanel, #cta, footer { display: none !important; }
+			}
+		</style>
+	</head>
+	<body class="index is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header" class="alt">
+					<h1 id="logo"><a href="index.html">Paul <span>Andrew Sullivan</span></a></h1>
+					<nav id="nav">
+						<ul>
+							<li class="current"><a href="#banner" class="scrolly">Home</a></li>
+							<li><a href="#about" class="scrolly">About</a></li>
+							<li><a href="#skills" class="scrolly">Skills</a></li>
+							<li><a href="#experience" class="scrolly">Experience</a></li>
+							<li><a href="#projects" class="scrolly">Projects</a></li>
+							<li><a href="PaulASullivanCV.pdf" target="_blank" class="button primary">Resume</a></li>
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Banner -->
+				<section id="banner">
+					<div class="inner">
+						<header>
+							<h2>Paul Andrew Sullivan</h2>
+						</header>
+						<p>CS&amp;E Student &nbsp;&middot;&nbsp; Developer<br />
+						Hardware Enthusiast &nbsp;&middot;&nbsp; University of Iowa '27</p>
+						<footer>
+							<ul class="buttons stacked">
+								<li><a href="#about" class="button fit scrolly">Learn More</a></li>
+							</ul>
+						</footer>
+					</div>
+				</section>
+
+			<!-- Main -->
+				<article id="main">
+
+					<!-- About -->
+					<section id="about" class="wrapper style2 container special-alt">
+						<div class="row gtr-50" style="align-items:center;">
+							<div class="col-4 col-12-narrower imp-narrower">
+								<div class="headshot-wrap">
+									<img src="assets/images/headshot.JPG" alt="Paul Andrew Sullivan" />
+								</div>
+							</div>
+							<div class="col-8 col-12-narrower">
+								<header>
+									<h2>About <strong>Me</strong></h2>
+								</header>
+								<p>
+									Hello! My name is Paul Andrew Sullivan, but I go by Andrew. I'm a junior
+									Computer Science and Engineering student at the University of Iowa whose
+									passion is building and tinkering.
+								</p>
+								<p>
+									I've always enjoyed learning how things work and improving them — from
+									constructing with Legos as a kid to assembling my first custom PC in 8th
+									grade. Over the years I've become the default IT consultant for family
+									and friends, building custom systems and solving real-world tech problems.
+								</p>
+								<p>
+									My drive for problem-solving led me to pursue CS&amp;E, blending my love
+									of creation with engineering discipline.
+								</p>
+								<footer>
+									<ul class="buttons">
+										<li><a href="#experience" class="button scrolly">My Experience</a></li>
+									</ul>
+								</footer>
+							</div>
+						</div>
+					</section>
+
+					<!-- Skills -->
+					<section id="skills" class="wrapper style1 container special">
+						<header class="major">
+							<h2>Skills &amp; <strong>Coursework</strong></h2>
+						</header>
+
+						<div class="row">
+							<div class="col-4 col-12-narrower">
+								<section>
+									<span class="icon solid featured fa-code"></span>
+									<header><h3>Languages</h3></header>
+									<div class="skill-tags" style="justify-content:center;">
+										<span class="skill-tag">Java</span>
+										<span class="skill-tag">Python</span>
+										<span class="skill-tag">C++</span>
+										<span class="skill-tag">HTML / CSS</span>
+										<span class="skill-tag">JavaScript</span>
+									</div>
+								</section>
+							</div>
+							<div class="col-4 col-12-narrower">
+								<section>
+									<span class="icon solid featured fa-laptop-code"></span>
+									<header><h3>Dev &amp; Tools</h3></header>
+									<div class="skill-tags" style="justify-content:center;">
+										<span class="skill-tag">Git / GitLab</span>
+										<span class="skill-tag">Windows</span>
+										<span class="skill-tag">macOS</span>
+										<span class="skill-tag">MS Office</span>
+										<span class="skill-tag">VS Code</span>
+									</div>
+								</section>
+							</div>
+							<div class="col-4 col-12-narrower">
+								<section>
+									<span class="icon solid featured fa-microchip"></span>
+									<header><h3>Hardware</h3></header>
+									<div class="skill-tags" style="justify-content:center;">
+										<span class="skill-tag">Oscilloscope</span>
+										<span class="skill-tag">Breadboard</span>
+										<span class="skill-tag">Multi-Meter</span>
+										<span class="skill-tag">Power Supplies</span>
+										<span class="skill-tag">PC Building</span>
+									</div>
+								</section>
+							</div>
+						</div>
+
+						<div class="row" style="margin-top:3rem;">
+							<div class="col-12">
+								<header><h3>Relevant Coursework</h3></header>
+								<div class="skill-tags" style="justify-content:center;">
+									<span class="skill-tag">Data Structures</span>
+									<span class="skill-tag">Algorithms</span>
+									<span class="skill-tag">Computer Organization</span>
+									<span class="skill-tag">Discrete Math</span>
+									<span class="skill-tag">Calculus</span>
+									<span class="skill-tag">Linear Algebra</span>
+									<span class="skill-tag">Technical Writing</span>
+									<span class="skill-tag">Ethics in Computing</span>
+								</div>
+							</div>
+						</div>
+					</section>
+
+					<!-- Experience -->
+					<section id="experience" class="wrapper style2 container special-alt">
+						<div class="row gtr-50">
+							<div class="col-8 col-12-narrower">
+								<header>
+									<h2>Work <strong>Experience</strong></h2>
+								</header>
+
+								<div class="exp-entry">
+									<div class="exp-meta">May 2025 – Aug 2025 &nbsp;&middot;&nbsp; Phillips Chevrolet</div>
+									<h3>Porter</h3>
+									<p>
+										Maintained vehicle lot organization and cleanliness across a high-volume
+										dealership. Coordinated vehicle staging for sales and service departments,
+										and developed strong attention to detail and time-management skills in a
+										fast-paced environment.
+									</p>
+								</div>
+
+								<div class="exp-entry">
+									<div class="exp-meta">Jan 2025 – Aug 2025 &nbsp;&middot;&nbsp; Self-Employed</div>
+									<h3>Hardware Resale Business</h3>
+									<p>
+										Sourced, tested, and resold computer components and electronics.
+										Managed inventory, wrote listings, and handled all customer communication
+										end-to-end. Developed hands-on expertise in PC hardware evaluation,
+										component-level troubleshooting, and pricing strategy.
+									</p>
+								</div>
+							</div>
+							<div class="col-4 col-12-narrower imp-narrower">
+								<section style="text-align:center; padding-top:1rem;">
+									<span class="icon solid fa-graduation-cap"
+									      style="font-size:2.5rem; display:block; margin-bottom:1rem; opacity:.55;"></span>
+									<header><h3>Education</h3></header>
+									<p>
+										<strong>University of Iowa</strong><br />
+										B.S. Computer Science<br />
+										&amp; Engineering<br />
+										Iowa City, IA<br /><br />
+										Expected Graduation:<br />
+										<strong>May 2027</strong>
+									</p>
+								</section>
+							</div>
+						</div>
+					</section>
+
+					<!-- Projects -->
+					<section id="projects" class="wrapper style3 container special">
+
+						<header class="major">
+							<h2>My <strong>Projects</strong></h2>
+						</header>
+
+						<div class="row">
+							<div class="col-6 col-12-narrower">
+								<section>
+									<a href="#projects" class="image featured">
+										<img src="images/project-network.jpg" alt="Home Network Infrastructure" />
+									</a>
+									<header>
+										<h3>Home Network Infrastructure</h3>
+									</header>
+									<p>Replaced commercial off-the-shelf router with a custom pfSense appliance to gain enterprise-grade control over home network security and traffic segmentation.</p>
+									<ul style="text-align:left; margin:.75rem 0;">
+										<li>Full VLAN isolation between home, IoT, and server network segments</li>
+										<li>DMZ zone exposing self-hosted web services without compromising the main LAN</li>
+										<li>Custom firewall rules and real-time network monitoring dashboard</li>
+									</ul>
+									<div class="skill-tags" style="justify-content:center; margin-top:.75rem;">
+										<span class="skill-tag">pfSense</span>
+										<span class="skill-tag">FreeBSD</span>
+										<span class="skill-tag">VLAN / DMZ</span>
+										<span class="skill-tag">Firewall</span>
+									</div>
+								</section>
+							</div>
+							<div class="col-6 col-12-narrower">
+								<section>
+									<a href="https://paul-andrew-sullivan.github.io/ResumeWebsite/" target="_blank" class="image featured">
+										<img src="images/project-portfolio.jpg" alt="Personal Portfolio Website" />
+									</a>
+									<header>
+										<h3>Personal Portfolio Website &nbsp;<span class="badge-progress"><span class="badge-dot"></span>In Progress</span></h3>
+									</header>
+									<p>Designed and built a professional portfolio site from scratch to showcase skills and projects to employers, without relying on templates or site builders.</p>
+									<ul style="text-align:left; margin:.75rem 0;">
+										<li>Built with vanilla HTML, CSS, and JavaScript using the HTML5UP Twenty template as a foundation</li>
+										<li>Previously self-hosted on personal hardware with a custom domain and SSL</li>
+										<li>Migrated to GitHub Pages; fully responsive across all screen sizes</li>
+									</ul>
+									<div class="skill-tags" style="justify-content:center; margin-top:.75rem;">
+										<span class="skill-tag">HTML / CSS / JS</span>
+										<span class="skill-tag">GitHub Pages</span>
+										<span class="skill-tag">SSL / DNS</span>
+									</div>
+									<p style="margin-top:.75rem;"><a href="https://paul-andrew-sullivan.github.io/ResumeWebsite/" target="_blank" class="button small">Visit Site</a></p>
+								</section>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-6 col-12-narrower">
+								<section>
+									<a href="#projects" class="image featured">
+										<img src="images/project-hardware.jpg" alt="Computer Hardware Resale" />
+									</a>
+									<header>
+										<h3>Computer Hardware Resale</h3>
+									</header>
+									<p>Launched and operated an e-commerce business buying, testing, and reselling computer hardware components across eBay and Facebook Marketplace.</p>
+									<ul style="text-align:left; margin:.75rem 0;">
+										<li>Performed full hardware diagnostics and stress testing on every component before listing</li>
+										<li>Developed pricing models using market research to maximize margin</li>
+										<li>Maintained inventory tracking and financial records for tax compliance</li>
+									</ul>
+									<div class="skill-tags" style="justify-content:center; margin-top:.75rem;">
+										<span class="skill-tag">Hardware Diagnostics</span>
+										<span class="skill-tag">E-Commerce</span>
+										<span class="skill-tag">Inventory Management</span>
+									</div>
+								</section>
+							</div>
+							<div class="col-6 col-12-narrower">
+								<section>
+									<a href="#projects" class="image featured">
+										<img src="images/project-fivem.jpg" alt="FiveM Custom Game Server" />
+									</a>
+									<header>
+										<h3>FiveM Custom Game Server &nbsp;<span class="badge-progress"><span class="badge-dot"></span>In Progress</span></h3>
+									</header>
+									<p>Building a custom FiveM multiplayer server from the ground up after years of playing on existing servers and recognizing where the experience could be significantly improved.</p>
+									<ul style="text-align:left; margin:.75rem 0;">
+										<li>Developing custom Lua scripts and resources for unique server-side gameplay mechanics</li>
+										<li>Configuring server infrastructure, player data persistence, and resource management</li>
+										<li>Collaborative development with a partner, using version control to manage contributions</li>
+									</ul>
+									<div class="skill-tags" style="justify-content:center; margin-top:.75rem;">
+										<span class="skill-tag">FiveM</span>
+										<span class="skill-tag">Lua</span>
+										<span class="skill-tag">Game Development</span>
+										<span class="skill-tag">Server Admin</span>
+									</div>
+								</section>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-6 col-12-narrower">
+								<section>
+									<a href="#projects" class="image featured">
+										<img src="images/project-tracker.jpg" alt="PC Parts Tracker App" />
+									</a>
+									<header>
+										<h3>PC Parts Tracker App &nbsp;<span class="badge-progress"><span class="badge-dot"></span>In Progress</span></h3>
+									</header>
+									<p>Designed a mobile application to simplify the process of selecting and comparing PC components for a custom build.</p>
+									<ul style="text-align:left; margin:.75rem 0;">
+										<li>Swipe-based interface for quickly approving or rejecting components</li>
+										<li>Saves shortlisted parts for side-by-side comparison</li>
+									</ul>
+									<div class="skill-tags" style="justify-content:center; margin-top:.75rem;">
+										<span class="skill-tag">Mobile Development</span>
+										<span class="skill-tag">UI / UX Design</span>
+									</div>
+								</section>
+							</div>
+							<div class="col-6 col-12-narrower">
+								<section>
+									<a href="#projects" class="image featured">
+										<img src="images/project-coreflip.jpg" alt="CoreFlip – Resale Business Website" />
+									</a>
+									<header>
+										<h3>CoreFlip – Resale Business Website &nbsp;<span class="badge-progress"><span class="badge-dot"></span>In Progress</span></h3>
+									</header>
+									<p>Designed and built a storefront website for my electronics resale business, CoreFlip, to replace manual marketplace listings with a centralized, professional presence.</p>
+									<ul style="text-align:left; margin:.75rem 0;">
+										<li>Dynamic listings powered by JSON — swap to a live API with a one-line change</li>
+										<li>Condition grading system, category filtering, and inquiry modal per item</li>
+										<li>Showcase gallery for custom PC builds with lightbox and keyboard navigation</li>
+									</ul>
+									<div class="skill-tags" style="justify-content:center; margin-top:.75rem;">
+										<span class="skill-tag">HTML / CSS / JS</span>
+										<span class="skill-tag">JSON API</span>
+										<span class="skill-tag">E-Commerce</span>
+									</div>
+								</section>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-6 col-12-narrower" style="margin:0 auto; float:none;">
+								<section>
+									<a href="#projects" class="image featured">
+										<img src="images/project-photography.jpg" alt="Photography Portfolio Website" />
+									</a>
+									<header>
+										<h3>Photography Portfolio Website &nbsp;<span class="badge-progress"><span class="badge-dot"></span>In Progress</span></h3>
+									</header>
+									<p>Building a personal photography portfolio site to display and sell prints, with a clean gallery-focused layout designed to let the photos do the talking.</p>
+									<ul style="text-align:left; margin:.75rem 0;">
+										<li>Curated gallery with category filtering and lightbox viewer</li>
+										<li>Print shop integration for selling physical and digital copies</li>
+										<li>Optimized image loading for fast performance without sacrificing quality</li>
+									</ul>
+									<div class="skill-tags" style="justify-content:center; margin-top:.75rem;">
+										<span class="skill-tag">HTML / CSS / JS</span>
+										<span class="skill-tag">Photography</span>
+										<span class="skill-tag">UI / UX Design</span>
+									</div>
+								</section>
+							</div>
+						</div>
+
+					</section>
+
+				</article>
+
+			<!-- CTA -->
+				<section id="cta">
+					<header>
+						<h2>Want my full <strong>resume</strong>?</h2>
+						<p>Download a PDF copy or print a clean version right from your browser.</p>
+					</header>
+					<footer>
+						<ul class="buttons">
+							<li><a href="PaulASullivanCV.pdf" target="_blank" class="button primary">Download PDF</a></li>
+							<li><a href="PaulASullivanCV.pdf" target="_blank" class="button">Print / View</a></li>
+						</ul>
+					</footer>
+				</section>
+
+			<!-- Footer -->
+				<footer id="footer">
+
+					<ul class="icons">
+						<li>
+							<a href="https://www.linkedin.com/in/paulandrewsullivan" target="_blank"
+							   class="icon brands alt fa-linkedin">
+								<span class="label">LinkedIn</span>
+							</a>
+						</li>
+						<li>
+							<a href="https://github.com/Paul-Andrew-Sullivan" target="_blank"
+							   class="icon brands alt fa-github">
+								<span class="label">GitHub</span>
+							</a>
+						</li>
+						<li>
+							<a href="mailto:paul@paulandrewsullivan.com"
+							   class="icon solid alt fa-envelope">
+								<span class="label">Email</span>
+							</a>
+						</li>
+					</ul>
+
+					<ul class="copyright">
+						<li>&copy; Paul Andrew Sullivan</li>
+						<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+
+				</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
