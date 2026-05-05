@@ -130,6 +130,146 @@
 				animation: none !important;
 			}
 
+			/* ── Timeline ── */
+			.timeline {
+				position: relative;
+				padding-left: 1.75rem;
+			}
+			.timeline::before {
+				content: '';
+				position: absolute;
+				left: 0;
+				top: .45rem;
+				bottom: .45rem;
+				width: 2px;
+				background: rgba(255,255,255,0.25);
+				border-radius: 2px;
+			}
+			.timeline-item {
+				position: relative;
+				margin-bottom: 2.25rem;
+			}
+			.timeline-item:last-child { margin-bottom: 0; }
+			.timeline-item::before {
+				content: '';
+				position: absolute;
+				left: -2.1rem;
+				top: .4rem;
+				width: 11px;
+				height: 11px;
+				border-radius: 50%;
+				background: #fff;
+				box-shadow: 0 0 0 3px rgba(255,255,255,0.2);
+			}
+			.timeline-date {
+				font-size: .75rem;
+				font-weight: 700;
+				text-transform: uppercase;
+				letter-spacing: .09em;
+				opacity: .6;
+				margin-bottom: .2rem;
+			}
+			.timeline-item h3 {
+				margin: 0 0 .15rem;
+				font-size: 1.15rem;
+			}
+			.timeline-company {
+				font-size: .85rem;
+				opacity: .65;
+				margin-bottom: .65rem;
+			}
+			.timeline-item ul {
+				padding-left: 1.2rem;
+				margin: 0;
+				font-size: .9rem;
+				line-height: 1.8;
+				opacity: .9;
+			}
+			.timeline-item ul li { margin-bottom: .2rem; }
+
+			/* ── Resume document ── */
+			.resume-bar {
+				display: flex;
+				gap: .85rem;
+				justify-content: center;
+				margin-bottom: 2.5rem;
+				flex-wrap: wrap;
+			}
+			.resume-doc {
+				background: #fff;
+				border-radius: 6px;
+				border: 1px solid #e2e8f0;
+				box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+				padding: 3rem 3.5rem;
+				max-width: 760px;
+				margin: 0 auto;
+				color: #1a202c;
+				text-align: left;
+			}
+			.rdoc-header {
+				text-align: center;
+				padding-bottom: 1.4rem;
+				margin-bottom: 1.8rem;
+				border-bottom: 2px solid #1a4d8c;
+			}
+			.rdoc-header h1 {
+				font-size: 1.9rem;
+				font-weight: 700;
+				color: #1a202c;
+				letter-spacing: -.02em;
+				margin-bottom: .65rem;
+			}
+			.rdoc-contact {
+				display: flex;
+				flex-wrap: wrap;
+				gap: .75rem 1.5rem;
+				justify-content: center;
+				font-size: .8rem;
+				color: #4a5568;
+			}
+			.rdoc-contact span { display: flex; align-items: center; gap: .3rem; }
+			.rdoc-contact i { color: #1a4d8c; font-size: .75rem; }
+			.rdoc-section { margin-bottom: 1.75rem; }
+			.rdoc-section-title {
+				font-size: .75rem;
+				font-weight: 700;
+				text-transform: uppercase;
+				letter-spacing: .1em;
+				color: #1a202c;
+				border-bottom: 1.5px solid #1a4d8c;
+				padding-bottom: .35rem;
+				margin-bottom: 1.1rem;
+			}
+			.rdoc-entry { margin-bottom: 1.25rem; }
+			.rdoc-entry:last-child { margin-bottom: 0; }
+			.rdoc-entry-head {
+				display: flex;
+				justify-content: space-between;
+				align-items: flex-start;
+				gap: 1rem;
+				margin-bottom: .45rem;
+			}
+			.rdoc-role { font-size: .9rem; font-weight: 600; color: #1a202c; }
+			.rdoc-org  { font-size: .83rem; color: #4a5568; }
+			.rdoc-date { font-size: .8rem; color: #718096; font-style: italic; white-space: nowrap; flex-shrink: 0; }
+			.rdoc-bullets {
+				list-style: disc;
+				padding-left: 1.35rem;
+				color: #4a5568;
+				font-size: .85rem;
+				line-height: 1.75;
+				margin: 0;
+			}
+			.rdoc-bullets li { margin-bottom: .2rem; }
+			.rdoc-skills-list { font-size: .88rem; color: #4a5568; line-height: 2; }
+			.rdoc-skills-list strong { color: #1a202c; }
+
+			@media (max-width: 760px) {
+				.resume-doc { padding: 1.75rem 1.25rem; }
+				.rdoc-entry-head { flex-direction: column; gap: .2rem; }
+				.rdoc-contact { flex-direction: column; align-items: center; gap: .4rem; }
+			}
+
 			@media print {
 				#header, #banner, #navButton, #navPanel, #cta, footer { display: none !important; }
 			}
@@ -148,7 +288,7 @@
 							<li><a href="#skills" class="scrolly">Skills</a></li>
 							<li><a href="#experience" class="scrolly">Experience</a></li>
 							<li><a href="#projects" class="scrolly">Projects</a></li>
-							<li><a href="PaulASullivanCV.pdf" target="_blank" class="button primary">Resume</a></li>
+							<li><a href="#resume-section" class="scrolly">Resume</a></li>
 						</ul>
 					</nav>
 				</header>
@@ -161,12 +301,7 @@
 						</header>
 						<p>CS&amp;E Student &nbsp;&middot;&nbsp; Developer<br />
 						Hardware Enthusiast &nbsp;&middot;&nbsp; University of Iowa '27</p>
-						<footer>
-							<ul class="buttons stacked">
-								<li><a href="#about" class="button fit scrolly">Learn More</a></li>
-							</ul>
-						</footer>
-					</div>
+						</div>
 				</section>
 
 			<!-- Main -->
@@ -281,26 +416,31 @@
 									<h2>Work <strong>Experience</strong></h2>
 								</header>
 
-								<div class="exp-entry">
-									<div class="exp-meta">May 2025 – Aug 2025 &nbsp;&middot;&nbsp; Phillips Chevrolet</div>
-									<h3>Porter</h3>
-									<p>
-										Maintained vehicle lot organization and cleanliness across a high-volume
-										dealership. Coordinated vehicle staging for sales and service departments,
-										and developed strong attention to detail and time-management skills in a
-										fast-paced environment.
-									</p>
-								</div>
+								<div class="timeline">
 
-								<div class="exp-entry">
-									<div class="exp-meta">Jan 2025 – Aug 2025 &nbsp;&middot;&nbsp; Self-Employed</div>
-									<h3>Hardware Resale Business</h3>
-									<p>
-										Sourced, tested, and resold computer components and electronics.
-										Managed inventory, wrote listings, and handled all customer communication
-										end-to-end. Developed hands-on expertise in PC hardware evaluation,
-										component-level troubleshooting, and pricing strategy.
-									</p>
+									<div class="timeline-item">
+										<div class="timeline-date">May 2025 – August 2025</div>
+										<h3>Porter</h3>
+										<div class="timeline-company">Phillips Chevrolet &mdash; Frankfort, IL</div>
+										<ul>
+											<li>Carried out vehicle preparation operations including comprehensive cleaning, fueling protocols, and quality inspections.</li>
+											<li>Managed premium vehicle servicing procedures, performing detailed maintenance checks, exterior care, and performance validation through test drives.</li>
+											<li>Performed regional vehicle transport and logistics operations throughout the Chicagoland metropolitan area.</li>
+										</ul>
+									</div>
+
+									<div class="timeline-item">
+										<div class="timeline-date">January 2025 – August 2025</div>
+										<h3>Computer Hardware Resale &mdash; Owner &amp; Operator</h3>
+										<div class="timeline-company">Personal Venture &mdash; Mokena, IL</div>
+										<ul>
+											<li>Operated multi-platform e-commerce operation across eBay &amp; Facebook Marketplace.</li>
+											<li>Conducted market research and pricing analysis to identify profitable components and optimize profit margins.</li>
+											<li>Performed hardware testing and diagnostics to verify component functionality and product quality.</li>
+											<li>Maintained detailed inventory tracking and financial records for tax compliance and business analysis.</li>
+										</ul>
+									</div>
+
 								</div>
 							</div>
 							<div class="col-4 col-12-narrower imp-narrower">
@@ -489,16 +629,143 @@
 
 				</article>
 
+			<!-- Resume -->
+				<section id="resume-section" class="wrapper style1 container">
+					<header class="major special">
+						<h2>My <strong>Resume</strong></h2>
+					</header>
+
+					<div class="resume-bar">
+						<a href="PaulASullivanCV.pdf" download="PaulASullivanCV.pdf" class="button primary"><i class="fas fa-download"></i>&nbsp; Download PDF</a>
+						<a href="PaulASullivanCV.pdf" target="_blank" class="button"><i class="fas fa-eye"></i>&nbsp; View PDF</a>
+						<a href="#" onclick="window.print(); return false;" class="button"><i class="fas fa-print"></i>&nbsp; Print</a>
+					</div>
+
+					<div class="resume-doc">
+
+						<div class="rdoc-header">
+							<h1>Paul Andrew Sullivan</h1>
+							<div class="rdoc-contact">
+								<span><i class="fas fa-globe"></i> paulandrewsullivan.com</span>
+								<span><i class="fab fa-linkedin"></i> paulandrewsullivan</span>
+								<span><i class="fab fa-github"></i> Paul-Andrew-Sullivan</span>
+								<span><i class="fas fa-envelope"></i> paul@paulandrewsullivan.com</span>
+							</div>
+						</div>
+
+						<div class="rdoc-section">
+							<h2 class="rdoc-section-title">Education</h2>
+							<div class="rdoc-entry">
+								<div class="rdoc-entry-head">
+									<div>
+										<div class="rdoc-role">Bachelor of Science in Computer Science and Engineering</div>
+										<div class="rdoc-org">University of Iowa &mdash; Iowa City, IA</div>
+									</div>
+									<div class="rdoc-date">Anticipated May 2027</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="rdoc-section">
+							<h2 class="rdoc-section-title">Skills</h2>
+							<div class="rdoc-skills-list">
+								<p><strong>Software:</strong> Java, Python, C++, GitLab, Windows, macOS, Microsoft Office Suite</p>
+								<p><strong>Equipment:</strong> Oscilloscope, Breadboard, Multi-Meter, Power Supplies</p>
+							</div>
+						</div>
+
+						<div class="rdoc-section">
+							<h2 class="rdoc-section-title">Work Experience</h2>
+
+							<div class="rdoc-entry">
+								<div class="rdoc-entry-head">
+									<div>
+										<div class="rdoc-role">Porter</div>
+										<div class="rdoc-org">Phillips Chevrolet &mdash; Frankfort, IL</div>
+									</div>
+									<div class="rdoc-date">May &ndash; August 2025</div>
+								</div>
+								<ul class="rdoc-bullets">
+									<li>Carried out vehicle preparation operations including comprehensive cleaning, fueling protocols, and quality inspections.</li>
+									<li>Managed premium vehicle servicing procedures, performing detailed maintenance checks, exterior care, and performance validation through test drives to ensure customer satisfaction standards.</li>
+									<li>Performed regional vehicle transport and logistics operations throughout the Chicagoland metropolitan area.</li>
+								</ul>
+							</div>
+
+							<div class="rdoc-entry">
+								<div class="rdoc-entry-head">
+									<div>
+										<div class="rdoc-role">Computer Hardware Resale &mdash; Owner &amp; Operator</div>
+										<div class="rdoc-org">Personal Venture &mdash; Mokena, IL</div>
+									</div>
+									<div class="rdoc-date">January &ndash; August 2025</div>
+								</div>
+								<ul class="rdoc-bullets">
+									<li>Operated multi-platform e-commerce operation across eBay &amp; Facebook Marketplace.</li>
+									<li>Conducted market research and pricing analysis to identify profitable computer components and optimize profit margins.</li>
+									<li>Performed hardware testing and diagnostics to verify component functionality and ensure product quality standards.</li>
+									<li>Maintained detailed inventory tracking and financial records for tax compliance and business analysis.</li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="rdoc-section">
+							<h2 class="rdoc-section-title">Projects</h2>
+
+							<div class="rdoc-entry">
+								<div class="rdoc-entry-head">
+									<div>
+										<div class="rdoc-role">Home Network Infrastructure &amp; Self-Hosted Services</div>
+										<div class="rdoc-org">pfSense &middot; FreeBSD &middot; Networking</div>
+									</div>
+								</div>
+								<ul class="rdoc-bullets">
+									<li>Configured a mini PC as a network router using pfSense, replacing commercial equipment for enhanced control and security.</li>
+									<li>Implemented VLANs, DMZ, firewall rules, and network monitoring, isolating self-hosted web services from the main network.</li>
+									<li>Deployed and maintained personal resume website on self-hosted hardware with a custom domain and SSL certificates.</li>
+								</ul>
+							</div>
+
+							<div class="rdoc-entry">
+								<div class="rdoc-entry-head">
+									<div>
+										<div class="rdoc-role">Personal Portfolio Website</div>
+										<div class="rdoc-org">HTML / CSS / JS &middot; GitHub Pages</div>
+									</div>
+								</div>
+								<ul class="rdoc-bullets">
+									<li>Built with vanilla HTML, CSS, and JavaScript using the HTML5UP Twenty template as a foundation.</li>
+									<li>Deployed via GitHub Pages with a GitHub Actions CI/CD pipeline; fully responsive across all screen sizes.</li>
+								</ul>
+							</div>
+
+							<div class="rdoc-entry">
+								<div class="rdoc-entry-head">
+									<div>
+										<div class="rdoc-role">Computer Hardware Resale Business Website (CoreFlip)</div>
+										<div class="rdoc-org">HTML / CSS / JS &middot; JSON &middot; E-Commerce</div>
+									</div>
+								</div>
+								<ul class="rdoc-bullets">
+									<li>Designed and built a storefront site with dynamic JSON-powered listings, condition grading, and inquiry system.</li>
+									<li>Architected data layer so swapping local JSON for a live API requires a single line change.</li>
+								</ul>
+							</div>
+						</div>
+
+					</div>
+				</section>
+
 			<!-- CTA -->
 				<section id="cta">
 					<header>
-						<h2>Want my full <strong>resume</strong>?</h2>
-						<p>Download a PDF copy or print a clean version right from your browser.</p>
+						<h2>Let's <strong>Connect</strong></h2>
+						<p>Feel free to reach out — whether it's an opportunity, a project, or just to say hello.</p>
 					</header>
 					<footer>
 						<ul class="buttons">
-							<li><a href="PaulASullivanCV.pdf" target="_blank" class="button primary">Download PDF</a></li>
-							<li><a href="PaulASullivanCV.pdf" target="_blank" class="button">Print / View</a></li>
+							<li><a href="https://www.linkedin.com/in/paulandrewsullivan" target="_blank" class="button primary">LinkedIn</a></li>
+							<li><a href="mailto:paul@paulandrewsullivan.com" class="button">Email Me</a></li>
 						</ul>
 					</footer>
 				</section>
