@@ -676,7 +676,7 @@
 						<div class="rdoc-section">
 							<h2 class="rdoc-section-title">Skills</h2>
 							<div class="rdoc-skills-list">
-								<p><strong>Software:</strong> Java, Python, C++, Windows, macOS, Microsoft Office Suite</p>
+								<p><strong>Software:</strong> Java, Python, C++, Windows, macOS, Ubuntu, Microsoft Office Suite</p>
 								<p><strong>Equipment:</strong> Oscilloscope, Breadboard, Multi-meter</p>
 							</div>
 						</div>
@@ -722,15 +722,41 @@
 							<div class="rdoc-entry">
 								<div class="rdoc-entry-head">
 									<div>
-										<div class="rdoc-role">Home Network Infrastructure &amp; Self-Hosted Services</div>
-										<div class="rdoc-org">FreeBSD &middot; Networking &middot; Web-Development</div>
+										<div class="rdoc-role">OPC Website Manager (Client CMS)</div>
+										<div class="rdoc-org">Python &middot; Docker &middot; Caddy &middot; Cloudflare Tunnel</div>
 									</div>
 								</div>
 								<ul class="rdoc-bullets">
-									<li>Currently building a mini PC into a network router using pfSense to replace commercial equipment for enhanced control and security.</li>
-									<li>Developing advanced networking features including VLANs, DMZ, firewall rules, and network monitoring to enable isolation of self-hosted web services from the main network.</li>
-									<li>Planning deployment of personal resume website on self-hosted hardware with custom domain and SSL certificates.</li>
-									<li>Designing network services architecture for DHCP, DNS, port-forwarding, and VPN access to enable remote administration.</li>
+									<li>Built and deployed a custom CMS that a non-technical client uses daily to run his chiropractic practice's live website: block editor across 38 template pages, blog publishing to static pages, and photo management.</li>
+									<li>Designed a draft-preview-publish pipeline with per-file backups, so changes are reviewed before going live and are recoverable after.</li>
+									<li>Serves publicly behind Cloudflare Tunnel and Caddy with role-based logins; integrated a visitor analytics dashboard backed by self-hosted Umami.</li>
+								</ul>
+							</div>
+
+							<div class="rdoc-entry">
+								<div class="rdoc-entry-head">
+									<div>
+										<div class="rdoc-role">Home Server &amp; Network Infrastructure</div>
+										<div class="rdoc-org">Unraid &middot; Docker &middot; KVM &middot; OPNsense &middot; Tailscale</div>
+									</div>
+								</div>
+								<ul class="rdoc-bullets">
+									<li>Administer a production Unraid server running ~50 Docker containers and KVM virtual machines on a 22 TB parity-protected array, with automated nightly backups on 14-day retention.</li>
+									<li>Replaced the consumer router with OPNsense; two DMZ VLANs and firewall rules isolate public game servers from the home LAN.</li>
+									<li>Serve public sites (including paulandrewsullivan.com) through Cloudflare Tunnels with no open inbound ports; all admin interfaces are VPN-only via Tailscale.</li>
+								</ul>
+							</div>
+
+							<div class="rdoc-entry">
+								<div class="rdoc-entry-head">
+									<div>
+										<div class="rdoc-role">Public Game Servers: Minecraft &amp; FiveM</div>
+										<div class="rdoc-org">Python &middot; FastAPI &middot; MariaDB &middot; Docker</div>
+									</div>
+								</div>
+								<ul class="rdoc-bullets">
+									<li>Built a FastAPI admin dashboard for a public crossplay Minecraft server: RCON console, resource-pack pipeline for Java and Bedrock clients, whitelist-request form, and VPN-only authentication.</li>
+									<li>Run a FiveM roleplay server (Qbox framework, 99 resources, MariaDB) with dual-homed networking that keeps game traffic on the DMZ VLAN and the database on an internal network.</li>
 								</ul>
 							</div>
 						</div>
