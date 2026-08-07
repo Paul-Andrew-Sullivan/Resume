@@ -318,13 +318,14 @@
 						<div class="row gtr-50" style="align-items:center;">
 							<div class="col-4 col-12-narrower imp-narrower">
 								<div class="headshot-wrap">
-									<img src="assets/images/headshot.JPG" alt="Paul Andrew Sullivan" />
+									<img id="cms-photo" src="/content/photo.jpg" alt="Paul Andrew Sullivan" onerror="this.onerror=null;this.src='assets/images/headshot.JPG'" />
 								</div>
 							</div>
 							<div class="col-8 col-12-narrower">
 								<header>
 									<h2>About <strong>Me</strong></h2>
 								</header>
+									<div id="cms-about-body" data-cms-target="about">
 								<p>
 									Hello! My name is Paul Andrew Sullivan, but I go by Andrew. I'm a junior
 									Computer Science and Engineering student at the University of Iowa whose
@@ -340,7 +341,8 @@
 									My drive for problem-solving led me to pursue CS&amp;E, blending my love
 									of creation with engineering discipline.
 								</p>
-								<footer>
+								</div>
+									<footer>
 									<ul class="buttons">
 										<li><a href="#experience" class="button scrolly">My Experience</a></li>
 									</ul>
@@ -355,7 +357,7 @@
 							<h2>Skills &amp; <strong>Coursework</strong></h2>
 						</header>
 
-						<div class="row">
+						<div class="row" id="cms-skills-groups">
 							<div class="col-4 col-12-narrower">
 								<section>
 									<span class="icon solid featured fa-code"></span>
@@ -400,7 +402,7 @@
 						<div class="row" style="margin-top:3rem;">
 							<div class="col-12">
 								<header><h3>Relevant Coursework</h3></header>
-								<div class="skill-tags" style="justify-content:center;">
+								<div class="skill-tags" id="cms-coursework" style="justify-content:center;">
 									<span class="skill-tag">Data Structures</span>
 									<span class="skill-tag">Algorithms</span>
 									<span class="skill-tag">Computer Organization</span>
@@ -422,7 +424,7 @@
 									<h2>Work <strong>Experience</strong></h2>
 								</header>
 
-								<div class="timeline">
+								<div class="timeline" id="cms-timeline">
 
 									<div class="timeline-item">
 										<div class="timeline-date">May 2025 – August 2025</div>
@@ -450,7 +452,7 @@
 								</div>
 							</div>
 							<div class="col-4 col-12-narrower imp-narrower">
-								<section style="text-align:center; padding-top:1rem;">
+								<section style="text-align:center; padding-top:1rem;" id="cms-education">
 									<span class="icon solid fa-graduation-cap"
 									      style="font-size:2.5rem; display:block; margin-bottom:1rem; opacity:.55;"></span>
 									<header><h3>Education</h3></header>
@@ -474,11 +476,12 @@
 							<h2>My <strong>Projects</strong></h2>
 						</header>
 
-						<div class="row">
+						<div id="cms-projects-grid" data-cms-target="projects">
+<div class="row">
 							<div class="col-6 col-12-narrower">
 								<section>
 									<a href="#projects" class="image featured">
-										<img src="images/project-network.jpg" alt="Home Network Infrastructure" />
+										<img src="images/project-network.jpg" alt="Home Network Infrastructure" onerror="this.closest('.image').remove()" />
 									</a>
 									<header>
 										<h3>Home Network Infrastructure</h3>
@@ -500,7 +503,7 @@
 							<div class="col-6 col-12-narrower">
 								<section>
 									<a href="https://paulandrewsullivan.com" target="_blank" class="image featured">
-										<img src="images/project-portfolio.jpg" alt="Personal Portfolio Website" />
+										<img src="images/project-portfolio.jpg" alt="Personal Portfolio Website" onerror="this.closest('.image').remove()" />
 									</a>
 									<header>
 										<h3>Personal Portfolio Website &nbsp;<span class="badge-progress"><span class="badge-dot"></span>In Progress</span></h3>
@@ -524,7 +527,7 @@
 							<div class="col-6 col-12-narrower">
 								<section>
 									<a href="#projects" class="image featured">
-										<img src="images/project-hardware.jpg" alt="Computer Hardware Resale" />
+										<img src="images/project-hardware.jpg" alt="Computer Hardware Resale" onerror="this.closest('.image').remove()" />
 									</a>
 									<header>
 										<h3>Computer Hardware Resale</h3>
@@ -546,7 +549,7 @@
 							<div class="col-6 col-12-narrower">
 								<section>
 									<a href="#projects" class="image featured">
-										<img src="images/project-fivem.jpg" alt="FiveM Custom Game Server" />
+										<img src="images/project-fivem.jpg" alt="FiveM Custom Game Server" onerror="this.closest('.image').remove()" />
 									</a>
 									<header>
 										<h3>FiveM Custom Game Server &nbsp;<span class="badge-progress"><span class="badge-dot"></span>In Progress</span></h3>
@@ -570,7 +573,7 @@
 							<div class="col-6 col-12-narrower">
 								<section>
 									<a href="#projects" class="image featured">
-										<img src="images/project-tracker.jpg" alt="PC Parts Tracker App" />
+										<img src="images/project-tracker.jpg" alt="PC Parts Tracker App" onerror="this.closest('.image').remove()" />
 									</a>
 									<header>
 										<h3>PC Parts Tracker App &nbsp;<span class="badge-progress"><span class="badge-dot"></span>In Progress</span></h3>
@@ -589,7 +592,7 @@
 							<div class="col-6 col-12-narrower">
 								<section>
 									<a href="#projects" class="image featured">
-										<img src="images/project-coreflip.jpg" alt="CoreFlip – Resale Business Website" />
+										<img src="images/project-coreflip.jpg" alt="CoreFlip – Resale Business Website" onerror="this.closest('.image').remove()" />
 									</a>
 									<header>
 										<h3>CoreFlip – Resale Business Website &nbsp;<span class="badge-progress"><span class="badge-dot"></span>In Progress</span></h3>
@@ -612,7 +615,7 @@
 							<div class="col-6 col-12-narrower" style="margin:0 auto; float:none;">
 								<section>
 									<a href="#projects" class="image featured">
-										<img src="images/project-photography.jpg" alt="Photography Portfolio Website" />
+										<img src="images/project-photography.jpg" alt="Photography Portfolio Website" onerror="this.closest('.image').remove()" />
 									</a>
 									<header>
 										<h3>Photography Portfolio Website &nbsp;<span class="badge-progress"><span class="badge-dot"></span>In Progress</span></h3>
@@ -633,7 +636,9 @@
 							</div>
 						</div>
 
-					</section>
+					
+							</div>
+						</section>
 
 				</article>
 
@@ -644,12 +649,12 @@
 					</header>
 
 					<div class="resume-bar">
-						<a href="PaulASullivanCV.pdf" download="PaulASullivanCV.pdf" class="button primary"><i class="fas fa-download"></i>&nbsp; Download PDF</a>
-						<a href="PaulASullivanCV.pdf" target="_blank" class="button"><i class="fas fa-eye"></i>&nbsp; View PDF</a>
+						<a href="/content/resume.pdf" download="PaulASullivanCV.pdf" class="button primary"><i class="fas fa-download"></i>&nbsp; Download PDF</a>
+						<a href="/content/resume.pdf" target="_blank" class="button"><i class="fas fa-eye"></i>&nbsp; View PDF</a>
 						<a href="#" onclick="window.print(); return false;" class="button"><i class="fas fa-print"></i>&nbsp; Print</a>
 					</div>
 
-					<div class="resume-doc">
+					<div class="resume-doc" id="cms-resume-doc" data-cms-target="resume-doc">
 
 						<div class="rdoc-header">
 							<h1>Paul Andrew Sullivan</h1>
@@ -745,7 +750,7 @@
 						<p>Feel free to reach out — whether it's an opportunity, a project, or just to say hello.</p>
 					</header>
 					<footer>
-						<ul class="buttons">
+						<ul class="buttons" id="cms-cta-buttons">
 							<li><a href="https://www.linkedin.com/in/paulandrewsullivan" target="_blank" class="button primary">LinkedIn</a></li>
 							<li><a href="mailto:paul@paulandrewsullivan.com" class="button">Email Me</a></li>
 						</ul>
@@ -755,7 +760,7 @@
 			<!-- Footer -->
 				<footer id="footer">
 
-					<ul class="icons">
+					<ul class="icons" id="cms-footer-icons">
 						<li>
 							<a href="https://www.linkedin.com/in/paulandrewsullivan" target="_blank"
 							   class="icon brands alt fa-linkedin">
@@ -776,7 +781,7 @@
 						</li>
 					</ul>
 
-					<ul class="copyright">
+					<ul class="copyright" id="cms-footer-copyright">
 						<li>&copy; Paul Andrew Sullivan</li>
 						<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 					</ul>
@@ -795,5 +800,216 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
-	</body>
+	<!-- cms-patched-v2 -->
+<script>
+/* Sullivan Server resume-site CMS loader, v2 (adds the optional site.json loader).
+   Pulls editable content from /content/*. Falls back silently on error so the
+   static HTML stays visible. */
+(function(){
+  function $(sel){ return document.querySelector(sel); }
+  function setHTML(el, html){ if (el) el.innerHTML = html; }
+  function fetchJSON(p){ return fetch(p, {cache:'no-store'}).then(r => r.ok ? r.json() : Promise.reject(r.status)); }
+  function fetchText(p){ return fetch(p, {cache:'no-store'}).then(r => r.ok ? r.text() : Promise.reject(r.status)); }
+
+
+  // ---- Site text (hero, headings, skills, experience, education, connect) ----
+  // /content/site.json is written by the CMS. Every field is optional, every
+  // section hydrates independently, and any error leaves that section's
+  // static HTML exactly as shipped.
+  function attempt(fn){ try { fn(); } catch (e) { /* keep static fallback */ } }
+  function safeUrl(u){ return /^https?:\/\//i.test(String(u || '')) ? u : ''; }
+  fetchJSON('/content/site.json').then(function(s){
+    if (!s || typeof s !== 'object' || Array.isArray(s)) return;
+    attempt(function(){ if (s.tab_title) document.title = s.tab_title; });
+    attempt(function(){
+      if (s.logo && (s.logo.bold || s.logo.light))
+        setHTML($('#logo a'), esc(s.logo.bold || '') +
+          (s.logo.light ? ' <span>' + esc(s.logo.light) + '</span>' : ''));
+    });
+    attempt(function(){
+      if (!s.hero) return;
+      if (s.hero.name) setHTML($('#banner .inner h2'), esc(s.hero.name));
+      if (Array.isArray(s.hero.tagline_lines) && s.hero.tagline_lines.length)
+        setHTML($('#banner .inner p'), s.hero.tagline_lines.map(esc).join('<br />'));
+    });
+    attempt(function(){
+      var HP = {
+        about: '#about .col-8 > header h2',
+        skills: '#skills > header.major h2',
+        experience: '#experience .col-8 > header h2',
+        projects: '#projects header.major h2',
+        resume: '#resume-section > header.major h2',
+        cta: '#cta > header h2'
+      };
+      if (!s.headings) return;
+      Object.keys(HP).forEach(function(k){
+        attempt(function(){
+          var h = s.headings[k];
+          if (h && (h.light || h.bold))
+            setHTML($(HP[k]), esc(h.light || '') +
+              (h.bold ? ' <strong>' + esc(h.bold) + '</strong>' : ''));
+        });
+      });
+    });
+    attempt(function(){
+      if (!s.skills) return;
+      if (Array.isArray(s.skills.groups) && s.skills.groups.length) {
+        setHTML($('#cms-skills-groups'), s.skills.groups.map(function(g){
+          return '<div class="col-4 col-12-narrower"><section>' +
+            '<span class="icon solid featured ' + esc(g.icon || 'fa-code') + '"></span>' +
+            '<header><h3>' + esc(g.title || '') + '</h3></header>' +
+            '<div class="skill-tags" style="justify-content:center;">' +
+            (Array.isArray(g.tags) ? g.tags : []).map(function(t){ return '<span class="skill-tag">' + esc(t) + '</span>'; }).join('') +
+            '</div></section></div>';
+        }).join(''));
+      }
+    });
+    attempt(function(){
+      if (s.skills && Array.isArray(s.skills.coursework) && s.skills.coursework.length)
+        setHTML($('#cms-coursework'), s.skills.coursework.map(function(t){
+          return '<span class="skill-tag">' + esc(t) + '</span>';
+        }).join(''));
+    });
+    attempt(function(){
+      if (Array.isArray(s.experience) && s.experience.length)
+        setHTML($('#cms-timeline'), s.experience.map(function(e){
+          var bullets = Array.isArray(e.bullets) ? e.bullets : [];
+          return '<div class="timeline-item">' +
+            '<div class="timeline-date">' + esc(e.date || '') + '</div>' +
+            '<h3>' + esc(e.role || '') + '</h3>' +
+            '<div class="timeline-company">' + esc(e.company || '') + '</div>' +
+            (bullets.length
+              ? '<ul>' + bullets.map(function(b){ return '<li>' + esc(b) + '</li>'; }).join('') + '</ul>'
+              : '') +
+            '</div>';
+        }).join(''));
+    });
+    attempt(function(){
+      if (!(s.education && s.education.school)) return;
+      setHTML($('#cms-education'),
+        '<span class="icon solid fa-graduation-cap" style="font-size:2.5rem; display:block; margin-bottom:1rem; opacity:.55;"></span>' +
+        '<header><h3>Education</h3></header><p><strong>' + esc(s.education.school) + '</strong><br />' +
+        (Array.isArray(s.education.degree_lines) ? s.education.degree_lines : []).map(esc).join('<br />') +
+        (s.education.location ? '<br />' + esc(s.education.location) : '') +
+        (s.education.grad
+          ? '<br /><br />' + esc(s.education.grad_label || 'Expected Graduation:') +
+            '<br /><strong>' + esc(s.education.grad) + '</strong>'
+          : '') + '</p>');
+    });
+    attempt(function(){
+      if (s.cta && s.cta.body) setHTML($('#cta > header p'), esc(s.cta.body));
+    });
+    attempt(function(){
+      if (!s.socials) return;
+      var li = safeUrl(s.socials.linkedin_url), gh = safeUrl(s.socials.github_url);
+      var em = s.socials.email;
+      var btns = '';
+      if (li) btns += '<li><a href="' + esc(li) + '" target="_blank" class="button primary">LinkedIn</a></li>';
+      if (em) btns += '<li><a href="mailto:' + esc(em) + '" class="button">Email Me</a></li>';
+      if (btns) setHTML($('#cms-cta-buttons'), btns);
+      var icons = '';
+      if (li) icons += '<li><a href="' + esc(li) + '" target="_blank" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>';
+      if (gh) icons += '<li><a href="' + esc(gh) + '" target="_blank" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>';
+      if (em) icons += '<li><a href="mailto:' + esc(em) + '" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>';
+      if (icons) setHTML($('#cms-footer-icons'), icons);
+    });
+    attempt(function(){
+      if (s.footer && s.footer.copyright)
+        setHTML($('#cms-footer-copyright'),
+          '<li>' + esc(s.footer.copyright) + '</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>');
+    });
+  }).catch(function(){ /* keep static fallback */ });
+
+  // ---- About body ----
+  fetchText('/content/about.html').then(function(html){
+    var el = $('#cms-about-body');
+    if (el && html && html.trim()) setHTML(el, html);
+  }).catch(function(){ /* keep static fallback */ });
+
+  // ---- Projects grid ----
+  function badge(status){
+    if (status === 'in-progress')
+      return '&nbsp;<span class="badge-progress"><span class="badge-dot"></span>In Progress</span>';
+    if (status === 'planned')
+      return '&nbsp;<span class="badge-planned">Planned</span>';
+    return '';
+  }
+  function esc(s){
+    return String(s == null ? '' : s).replace(/[&<>"]/g, function(c){
+      return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]);
+    });
+  }
+  function projectCard(p){
+    var img = p.header_image || '';
+    var anchor = img
+      ? '<a href="'+esc(p.link_url || '#projects')+'"'+(p.link_url?' target="_blank"':'')+' class="image featured"><img src="'+esc(img)+'" alt="'+esc(p.title)+'" loading="lazy" onerror="this.parentNode.remove()"></a>'
+      : '';
+    var bullets = (p.bullets || []).length
+      ? '<ul style="text-align:left; margin:.75rem 0;">' + p.bullets.map(function(b){ return '<li>'+esc(b)+'</li>'; }).join('') + '</ul>'
+      : '';
+    var tags = (p.tags || []).length
+      ? '<div class="skill-tags" style="justify-content:center; margin-top:.75rem;">' + p.tags.map(function(t){ return '<span class="skill-tag">'+esc(t)+'</span>'; }).join('') + '</div>'
+      : '';
+    var linkBtn = (p.link_url && p.link_label)
+      ? '<p style="margin-top:.75rem;"><a href="'+esc(p.link_url)+'" target="_blank" class="button small">'+esc(p.link_label)+'</a></p>'
+      : '';
+    return '<section>'+
+      anchor+
+      '<header><h3>'+esc(p.title)+badge(p.status)+'</h3></header>'+
+      (p.description ? '<p>'+esc(p.description)+'</p>' : '')+
+      bullets + tags + linkBtn +
+      '</section>';
+  }
+  fetchJSON('/content/projects.json').then(function(projects){
+    var grid = $('#cms-projects-grid');
+    if (!grid || !Array.isArray(projects)) return;
+    projects.sort(function(a,b){ return (a.order||0)-(b.order||0); });
+    // 2-column rows on wider screens, mirroring the static template.
+    var html = '';
+    for (var i = 0; i < projects.length; i += 2) {
+      var p1 = projects[i], p2 = projects[i+1];
+      html += '<div class="row">';
+      if (p2) {
+        html += '<div class="col-6 col-12-narrower">' + projectCard(p1) + '</div>';
+        html += '<div class="col-6 col-12-narrower">' + projectCard(p2) + '</div>';
+      } else {
+        html += '<div class="col-6 col-12-narrower" style="margin:0 auto; float:none;">' + projectCard(p1) + '</div>';
+      }
+      html += '</div>';
+    }
+    grid.innerHTML = html;
+  }).catch(function(){ /* keep static fallback */ });
+
+  // ---- Inline resume rendering mode ----
+  // If /content/resume-mode.json says { "mode": "embed" }, replace the inline
+  // .resume-doc with an embedded PDF viewer of /content/resume.pdf. Default
+  // mode keeps the styled HTML.
+  fetchJSON('/content/resume-mode.json').then(function(cfg){
+    if (cfg && cfg.mode === 'embed') {
+      var doc = $('#cms-resume-doc');
+      if (doc) {
+        doc.innerHTML = '<iframe src="/content/resume.pdf" '+
+          'style="width:100%;height:calc(100vh - 240px);min-height:36rem;border:0;'+
+          'border-radius:8px;background:#fff" '+
+          'title="Resume PDF"></iframe>';
+      }
+    }
+  }).catch(function(){ /* keep static fallback */ });
+})();
+</script>
+
+<style>
+/* CMS-added: small badge for "planned" status (companion to the existing badge-progress). */
+.badge-planned {
+  display: inline-flex; align-items: center; gap: .4rem;
+  padding: .25rem .7rem; border-radius: 100px;
+  background: #eef2ff; border: 1px solid #c7d2fe; color: #3730a3;
+  font-size: .7rem; font-weight: 700; letter-spacing: .03em;
+  vertical-align: middle; margin-left: .6rem;
+}
+</style>
+
+<!-- resume-site-version-v1.2.0 -->
+<div style="position:fixed;bottom:14px;right:14px;z-index:99;font-family:'Roboto Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.32);padding:6px 10px;background:rgba(0,0,0,.22);border-radius:99rem;backdrop-filter:blur(8px);pointer-events:none">resume-site v1.2.0</div>
+</body>
 </html>
