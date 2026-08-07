@@ -1006,21 +1006,56 @@
     grid.innerHTML = html;
   }).catch(function(){ /* keep static fallback */ });
 
-  // ---- Inline resume rendering mode ----
-  // If /content/resume-mode.json says { "mode": "embed" }, replace the inline
-  // .resume-doc with an embedded PDF viewer of /content/resume.pdf. Default
-  // mode keeps the styled HTML.
-  fetchJSON('/content/resume-mode.json').then(function(cfg){
-    if (cfg && cfg.mode === 'embed') {
-      var doc = $('#cms-resume-doc');
-      if (doc) {
-        doc.innerHTML = '<iframe src="/content/resume.pdf" '+
-          'style="width:100%;height:calc(100vh - 240px);min-height:36rem;border:0;'+
-          'border-radius:8px;background:#fff" '+
-          'title="Resume PDF"></iframe>';
-      }
+  // ---- Inline resume rendering ----
+  // /content/resume-mode.json picks the view: "embed" swaps in a PDF viewer of
+  // /content/resume.pdf; "static" keeps the styled document, whose sections
+  // hydrate from /content/resume-doc.json (written by the CMS). Missing or
+  // empty files leave the markup shipped in this file untouched.
+  function rdocSection(sec){
+    var body = '';
+    if (sec.type === 'lines') {
+      body = '<div class="rdoc-skills-list">' +
+        (Array.isArray(sec.lines) ? sec.lines : []).map(function(l){
+          return '<p>' +
+            (l.label ? '<strong>' + esc(l.label) + ':</strong> ' : '') +
+            esc(l.text || '') + '</p>';
+        }).join('') + '</div>';
+    } else {
+      body = (Array.isArray(sec.entries) ? sec.entries : []).map(function(e){
+        var bullets = Array.isArray(e.bullets) && e.bullets.length
+          ? '<ul class="rdoc-bullets">' + e.bullets.map(function(b){
+              return '<li>' + esc(b) + '</li>';
+            }).join('') + '</ul>'
+          : '';
+        return '<div class="rdoc-entry"><div class="rdoc-entry-head"><div>' +
+          '<div class="rdoc-role">' + esc(e.role || '') + '</div>' +
+          (e.org ? '<div class="rdoc-org">' + esc(e.org) + '</div>' : '') +
+          '</div>' +
+          (e.date ? '<div class="rdoc-date">' + esc(e.date) + '</div>' : '') +
+          '</div>' + bullets + '</div>';
+      }).join('');
     }
-  }).catch(function(){ /* keep static fallback */ });
+    return '<div class="rdoc-section"><h2 class="rdoc-section-title">' +
+      esc(sec.title || '') + '</h2>' + body + '</div>';
+  }
+  fetchJSON('/content/resume-mode.json').catch(function(){ return {}; }).then(function(cfg){
+    var doc = $('#cms-resume-doc');
+    if (!doc) return;
+    if (cfg && cfg.mode === 'embed') {
+      doc.innerHTML = '<iframe src="/content/resume.pdf" '+
+        'style="width:100%;height:calc(100vh - 240px);min-height:36rem;border:0;'+
+        'border-radius:8px;background:#fff" '+
+        'title="Resume PDF"></iframe>';
+      return;
+    }
+    fetchJSON('/content/resume-doc.json').then(function(d){
+      if (!d || !Array.isArray(d.sections) || !d.sections.length) return;
+      var html = d.sections.map(rdocSection).join('');
+      var old = doc.getElementsByClassName('rdoc-section');
+      while (old.length) old[0].parentNode.removeChild(old[0]);
+      doc.insertAdjacentHTML('beforeend', html);
+    }).catch(function(){ /* keep static fallback */ });
+  });
 })();
 </script>
 
