@@ -3,7 +3,7 @@
 	<head>
 		<title>Paul Andrew Sullivan</title>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<style>
@@ -65,15 +65,13 @@
 				font-size: .78rem;
 				font-weight: 700;
 				letter-spacing: .04em;
-				box-shadow: 0 1px 4px rgba(0,0,0,0.2);
-				backdrop-filter: blur(4px);
 			}
-			/* style1 sections have a light background */
-			.wrapper.style1 .skill-tag {
+			/* style1 and style3 sections have a light background */
+			.wrapper.style1 .skill-tag,
+			.wrapper.style3 .skill-tag {
 				background: rgba(0,0,0,0.07);
 				border: 1px solid rgba(0,0,0,0.18);
 				color: inherit;
-				box-shadow: 0 1px 3px rgba(0,0,0,0.08);
 			}
 
 			/* ── Experience entries ── */
@@ -276,6 +274,101 @@
 				.rdoc-contact { flex-direction: column; align-items: center; gap: .4rem; }
 			}
 
+			/* ── Hero tagline: one line per entry, at every width ── */
+			#banner .inner p .hero-line { display: block; }
+
+			/* ── Project header: photo when the CMS has one, otherwise the
+			      title on a plain block in the same spot ── */
+			.project-head {
+				position: relative;
+				display: flex;
+				align-items: flex-end;
+				aspect-ratio: 3 / 2;
+				margin: 0 0 1.5rem;
+				padding: .9rem 1.1rem;
+				background: #e8eef5;
+				border: 1px solid #d5dde7;
+				border-radius: 4px;
+				overflow: hidden;
+				color: #1a4d8c;
+				text-align: left;
+			}
+			.project-head span {
+				font-size: .75rem;
+				font-weight: 700;
+				letter-spacing: .12em;
+				line-height: 1.4;
+				text-transform: uppercase;
+			}
+			.project-head img {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+
+			/* ── Menu button (phones/tablets): navy square instead of the
+			      template's translucent grey box ── */
+			#navButton .toggle:after {
+				background: #1a4d8c;
+				border-radius: 3px;
+			}
+			#navButton .toggle:before { opacity: 1; }
+
+			@media screen and (max-width: 736px) {
+				body, input, select, textarea { font-size: 12pt; }
+				p { text-align: left; }
+				#main p { margin-bottom: 1.25em; }
+				.headshot-wrap img { width: 150px; height: 150px; }
+				.timeline-item ul { line-height: 1.6; }
+				.button.small { line-height: 3em; }
+
+				#navButton .toggle:before,
+				#navButton .toggle:after {
+					top: 10px;
+					left: 10px;
+					width: 44px;
+					height: 40px;
+					line-height: 40px;
+				}
+
+				#skills .icon.featured { display: none; }
+				#skills section header h3 { margin-bottom: .6rem; }
+				#skills > .row + .row { margin-top: 1.5rem !important; }
+				.skill-tags { gap: .3rem; }
+				.skill-tag {
+					padding: .15rem .55rem;
+					font-size: .7rem;
+					letter-spacing: .02em;
+				}
+
+				.project-head { aspect-ratio: 5 / 2; margin-bottom: 1rem; }
+				#cms-projects-grid section { font-size: .94em; text-align: left; }
+				#cms-projects-grid section header { text-align: left; }
+				#cms-projects-grid .skill-tags { justify-content: flex-start !important; }
+				#cms-projects-grid section ul { margin: .5rem 0 !important; }
+				#cms-projects-grid .row > * { padding-top: 20px; }
+
+				#resume-section { padding-left: .75rem; padding-right: .75rem; }
+				#resume-section > header.special { padding-top: 2em; margin-bottom: 1.5em; }
+				.resume-bar { flex-wrap: nowrap; gap: .4rem; margin-bottom: 1.25rem; }
+				.resume-bar .button {
+					flex: 1 1 0;
+					min-width: 0;
+					padding: 0 .4em;
+					font-size: .68rem;
+					letter-spacing: .06em;
+					line-height: 3em;
+				}
+				.rdoc-header { padding-bottom: 1rem; margin-bottom: 1.25rem; }
+				.rdoc-header h1 { font-size: 1.45rem; margin-bottom: .4rem; }
+				.resume-doc { padding: 1.25rem 1rem; }
+				.rdoc-bullets { line-height: 1.55; }
+				.rdoc-skills-list { line-height: 1.6; }
+			}
+
 			@media print {
 				#header, #banner, #navButton, #navPanel, #cta, footer { display: none !important; }
 			}
@@ -305,8 +398,8 @@
 						<header>
 							<h2>Paul Andrew Sullivan</h2>
 						</header>
-						<p>CS&amp;E Student &nbsp;&middot;&nbsp; Developer<br />
-						Hardware Enthusiast &nbsp;&middot;&nbsp; University of Iowa '27</p>
+						<p><span class="hero-line">CS&amp;E Student &nbsp;&middot;&nbsp; Developer</span>
+						<span class="hero-line">Hardware Enthusiast &nbsp;&middot;&nbsp; University of Iowa '27</span></p>
 						</div>
 				</section>
 
@@ -494,6 +587,7 @@
 						<div class="row">
 							<div class="col-6 col-12-narrower">
 								<section>
+									<div class="project-head"><span>OPC Website Manager</span></div>
 									<header><h3>OPC Website Manager</h3></header>
 									<p>A content manager I built for Orland Park Chiropractic, my dad's practice. He edits the site's pages, blog posts and settings himself instead of sending me changes.</p>
 									<ul style="text-align:left; margin:.75rem 0;">
@@ -511,6 +605,7 @@
 							</div>
 							<div class="col-6 col-12-narrower">
 								<section>
+									<div class="project-head"><span>SullyPC</span></div>
 									<header><h3>SullyPC</h3></header>
 									<p>The store for my resale business, public at sullypc.com since October 2026. I wrote it myself and host it on my server.</p>
 									<ul style="text-align:left; margin:.75rem 0;">
@@ -529,6 +624,7 @@
 						<div class="row">
 							<div class="col-6 col-12-narrower">
 								<section>
+									<div class="project-head"><span>Home Network Infrastructure</span></div>
 									<header><h3>Home Network Infrastructure</h3></header>
 									<p>Replaced the consumer router with an OPNsense firewall and a managed switch, giving full control over routing, segmentation, and security for every self-hosted service on the network.</p>
 									<ul style="text-align:left; margin:.75rem 0;">
@@ -547,6 +643,7 @@
 							</div>
 							<div class="col-6 col-12-narrower">
 								<section>
+									<div class="project-head"><span>FiveM Custom Game Server</span></div>
 									<header><h3>FiveM Custom Game Server&nbsp;<span class="badge-progress"><span class="badge-dot"></span>In Progress</span></h3></header>
 									<p>Building a custom FiveM multiplayer server from the ground up after years of playing on existing servers and recognizing where the experience could be significantly improved.</p>
 									<ul style="text-align:left; margin:.75rem 0;">
@@ -566,6 +663,7 @@
 						<div class="row">
 							<div class="col-6 col-12-narrower">
 								<section>
+									<div class="project-head"><span>Personal Portfolio Website</span></div>
 									<header><h3>Personal Portfolio Website</h3></header>
 									<p>This site. I built it on the HTML5UP Twenty template and host it myself.</p>
 									<ul style="text-align:left; margin:.75rem 0;">
@@ -582,6 +680,7 @@
 							</div>
 							<div class="col-6 col-12-narrower">
 								<section>
+									<div class="project-head"><span>Photography Portfolio Website</span></div>
 									<header><h3>Photography Portfolio Website</h3></header>
 									<p>My photography site, live at thruandrewslens.com.</p>
 									<ul style="text-align:left; margin:.75rem 0;">
@@ -842,7 +941,9 @@
       if (!s.hero) return;
       if (s.hero.name) setHTML($('#banner .inner h2'), esc(s.hero.name));
       if (Array.isArray(s.hero.tagline_lines) && s.hero.tagline_lines.length)
-        setHTML($('#banner .inner p'), s.hero.tagline_lines.map(esc).join('<br />'));
+        setHTML($('#banner .inner p'), s.hero.tagline_lines.map(function(l){
+          return '<span class="hero-line">' + esc(l) + '</span>';
+        }).join(' '));
     });
     attempt(function(){
       var HP = {
@@ -952,10 +1053,12 @@
     });
   }
   function projectCard(p){
+    // The title block stays underneath, so a missing or broken photo
+    // still leaves a header instead of a hole.
     var img = p.header_image || '';
-    var anchor = img
-      ? '<a href="'+esc(p.link_url || '#projects')+'"'+(p.link_url?' target="_blank"':'')+' class="image featured"><img src="'+esc(img)+'" alt="'+esc(p.title)+'" loading="lazy" onerror="this.parentNode.remove()"></a>'
-      : '';
+    var head = '<div class="project-head"><span>'+esc(p.title)+'</span>' +
+      (img ? '<img src="'+esc(img)+'" alt="" loading="lazy" onerror="this.remove()">' : '') +
+      '</div>';
     var bullets = (p.bullets || []).length
       ? '<ul style="text-align:left; margin:.75rem 0;">' + p.bullets.map(function(b){ return '<li>'+esc(b)+'</li>'; }).join('') + '</ul>'
       : '';
@@ -966,7 +1069,7 @@
       ? '<p style="margin-top:.75rem;"><a href="'+esc(p.link_url)+'" target="_blank" class="button small">'+esc(p.link_label)+'</a></p>'
       : '';
     return '<section>'+
-      anchor+
+      head+
       '<header><h3>'+esc(p.title)+badge(p.status)+'</h3></header>'+
       (p.description ? '<p>'+esc(p.description)+'</p>' : '')+
       bullets + tags + linkBtn +
